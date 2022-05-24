@@ -39,6 +39,22 @@ function scrollActive(){
         }
     })
 }
+
+window.addEventListener('scroll', onScroll)
+
+onScroll()
+function onScroll() {
+  showBackToTopButtonOnScroll()
+}
+
+function showBackToTopButtonOnScroll() {
+    if (scrollY > 450) {
+        backToTopButton.classList.add('show')
+    } else {
+        backToTopButton.classList.remove('show')
+    }
+}
+
 window.addEventListener('scroll', scrollActive)
 
 /* SCROLL REVEAL ANIMATION */
