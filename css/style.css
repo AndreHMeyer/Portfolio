@@ -108,6 +108,11 @@ img {
     padding: 1.3px;
   }
 
+  .skillsIcon {
+    width: 4rem;
+    height: 4rem;
+  }
+
 }
 
 .navOption {
@@ -116,6 +121,11 @@ img {
 
 .navLink {
   position: relative;
+  color: #ffffff;
+}
+
+.navLogo
+{
   color: #ffffff;
 }
 
@@ -242,7 +252,8 @@ img {
 }
 
 .skillsIcon {
-  font-size: 15rem;
+  width: 4rem;
+  height: 4rem;
   color: #2a7da2;
   margin-bottom:var(--margin2);
 }
@@ -363,6 +374,12 @@ img {
   .home {
     row-gap: 2rem;
   }
+
+  .skillsIcon {
+    width: 4rem;
+    height: 4rem;
+  }
+
 }
 
 @media screen and (min-width: 576px) {
@@ -389,6 +406,11 @@ img {
     grid-template-columns: .7fr;
     justify-content: center;
     column-gap: 1rem;
+  }
+
+  .skillsIcon {
+    width: 10rem;
+    height: 10rem;
   }
 
   .workContainer {
@@ -453,6 +475,7 @@ img {
     align-items: center;
     text-align: initial;
   }
+
   .workContainer {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
