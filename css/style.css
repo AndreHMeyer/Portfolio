@@ -124,9 +124,30 @@ img {
   color: #ffffff;
 }
 
-.navLogo
-{
-  color: #ffffff;
+.navLogo {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  margin-left: auto;
+}
+
+.navLogo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.logoText {
+  color: #03a9f4;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 0.3rem;
 }
 
 .navLink:hover {
@@ -368,6 +389,28 @@ img {
 #backToTopButton circle:hover {
   fill: #03a9f4;
 }
+
+/* ===== NOTIFICATIONS =====*/
+.sentNotification {
+  position: fixed;
+  top: 6.25rem;
+  right: var(--margin1);
+  padding: .700rem;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: var(--fontSizeNormal);
+  font-weight: var(--fontWeight);
+  z-index: 9999;
+}
+
+.sentNotification.success {
+  background-color: #03a9f4;
+}
+
+.sentNotification.error {
+  background-color: red;
+}
+
 
 /* ===== MEDIA QUERIES=====*/
 @media screen and (max-width: 320px) {

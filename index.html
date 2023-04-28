@@ -18,11 +18,12 @@
         <!-- HEADER -->
         <header class="menu">
             <div class="navMenu layout">
-                <div class="navLogo">
+                <!--<div class="navLogo">
                     <a href="#">
-                        <span>AM</span>
+                        <span class="logoText">AM</span>
+                        <img class="logoIcon" src="assets/icons/Logo.svg" alt="Logo">
                     </a>
-                </div>
+                </div>-->
                 
                 <div class="navMenuOptions" id="nav-menu">
                     <ul class="navMenuList">
@@ -37,14 +38,14 @@
                 <div class="navMenuToggle" id="nav-toggle">
                     <i class='bx bx-menu'></i>
                 </div>
-            </nav>
+            </div>
         </header>
 
         <main>
             <!-- HOME -->
             <section class="home layout" id="home">
                 <div class="homeData">
-                    <h1 class="homeTitle">Olá,<br>meu nome é <span class="homeTitleColor">André Hillesheim Meyer 🤙</span></h1>
+                    <h1 class="homeTitle">Olá,<br>meu nome é <span class="homeTitleColor">André Hillesheim Meyer</span></h1>
                 </div>
 
                 <div class="homeLinks">
@@ -140,12 +141,12 @@
                 <h2 class="sectionTitle">Contato</h2>
 
                 <div class="contactContainer layout">
-                    <h4 class="sentNotification"></h4>
-                    <form action="" class="contacForm">
+                    <div class="sentNotification"></div>
+                    <form action="https://formspree.io/f/xayzarej" method="POST" class="contactForm">
                         <input type="text" name="name" placeholder="Nome" class="contactInput">
                         <input type="email" name="email" placeholder="Email" class="contactInput">
                         <textarea name="message" placeholder="Digite sua mensagem" id="" cols="0" rows="10" class="contactInput"></textarea>
-                        <input type="submit" value="Enviar" class="contactButton button">
+                        <input type="submit" value="Enviar" class="contactButton button" name="submit">
                     </form>
                 </div>
             </section>
@@ -194,6 +195,9 @@
 
         <!-- MAIN JS -->
         <script src="js/main.js"></script>
+
+        <!-- SEND EMAIL -->
+        <script src="js/sendEmail.js"></script>
 
     </body>
 </html>
