@@ -7,22 +7,46 @@ form.addEventListener('submit', (event) => {
     const xhr = new XMLHttpRequest();
 
     xhr.open('POST', form.action);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-    xhr.onreadystatechange = () => {
-        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+
+    xhr.onload = () => {
         if (xhr.status === 200) {
             form.reset();
-            notification.innerHTML = 'Mensagem enviada com sucesso!';
-            notification.classList.add('success');
+            showNotification(true);
         } else {
-            notification.innerHTML = 'Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.';
-            notification.classList.add('error');
+            showNotification(false);
         }
+    };
+
+    xhr.onerror = () => {
+        showNotification(false);
+    };
+
+    xhr.send(formData);
+});
+
+function showNotification(success) {
+    notification.innerHTML = '';
+
+    const icon = document.createElement('img');
+    icon.src = success ? 'assets/icons/Correct.svg' : 'assets/icons/Error.svg';
+    icon.classList.add('icon');
+    notification.appendChild(icon);
+
+    const message = document.createElement('span');
+    message.textContent = success ? 'Mensagem enviada com sucesso!' : 'Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde';
+    notification.appendChild(message);
+
+    notification.classList.add(success ? 'success' : 'error');
+
+    setTimeout(() => {
+        notification.classList.add('hide');
         setTimeout(() => {
             notification.innerHTML = '';
-            notification.classList.remove('success', 'error');
-        }, 3000);
-    };
-    xhr.send(new URLSearchParams(new FormData(form)));
-});
+            notification.classList.remove('success', 'error', 'hide');
+            if (!success) {
+                form.reset();
+            }
+        }, 1000);
+    }, 3000);
+}

@@ -398,19 +398,41 @@ img {
   padding: .700rem;
   border-radius: 8px;
   color: #ffffff;
+  font-family: var(--fontStyle);
   font-size: var(--fontSizeNormal);
   font-weight: var(--fontWeight);
   z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease-out;
 }
 
 .sentNotification.success {
   background-color: #03a9f4;
+  display: flex;
+  align-items: center;
 }
 
 .sentNotification.error {
   background-color: red;
+  display: flex;
+  align-items: center;
 }
 
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+.icon.hide {
+  opacity: 0;
+}
+
+.sentNotification.hide {
+  opacity: 0;
+}
 
 /* ===== MEDIA QUERIES=====*/
 @media screen and (max-width: 320px) {
