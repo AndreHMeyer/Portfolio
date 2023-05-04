@@ -143,9 +143,9 @@
                 <div class="contactContainer layout">
                     <div class="sentNotification"></div>
                     <form action="https://formspree.io/f/xayzarej" method="POST" class="contactForm">
-                        <input type="text" name="name" placeholder="Nome" class="contactInput">
-                        <input type="email" name="email" placeholder="Email" class="contactInput">
-                        <textarea name="message" placeholder="Digite sua mensagem" id="" cols="0" rows="10" class="contactInput"></textarea>
+                        <input type="text" name="name" placeholder="Nome" class="contactInput" required oninvalid="this.setCustomValidity('Insira seu nome.')"> 
+                        <input type="email" name="email" placeholder="Email" class="contactInput" required oninvalid="this.setCustomValidity('Insira um endereço de e-mail válido.')">
+                        <textarea name="message" placeholder="Digite sua mensagem" id="" cols="0" rows="10" class="contactInput" required oninvalid="this.setCustomValidity('Digite sua mensagem.')" oninput="setCustomValidity('')"></textarea>
                         <input type="submit" value="Enviar" class="contactButton button" name="submit">
                     </form>
                 </div>
